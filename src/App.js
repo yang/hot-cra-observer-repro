@@ -1,11 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { hot } from "react-hot-loader/root";
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const [count, setCount] = useState(0);
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header" onClick={() => setCount(count + 1)}>
+        {count}
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -23,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default hot(App);
